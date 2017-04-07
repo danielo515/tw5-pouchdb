@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/danielo515/pouchdb",
+  "description": "The Pouchdb library as a TW5 plugin.",
+  "author": "Danielo Rodriguez Rivero",
+  "core-version": ">=5.1.14",
+  "list": "readme",
+  "version": "0.1.0+3",
+  "released": "Sun, 22 Jan 2017 14:12:54 GMT"
+}

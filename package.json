@@ -1,10 +1,15 @@
 {
-  "name": "pouchdb",
+  "name": "tw-pouchdb",
   "version": "0.1.0",
   "author": "Danielo Rodriguez Rivero <rdanielo@gmail.com>",
   "description": "The pouchdb library embedded into tiddlywiki",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "gulp",
+    "build:production": "gulp --production",
+    "deploy": "cp package.json src/plugins/package.json && cd src/plugins/package.json && npm publish"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/danielo515/TW5-pouchdb"
@@ -45,9 +50,5 @@
     "semver": "^5.1.0",
     "tiddlywiki": "^5.1.13",
     "yargs": "^6.5.0"
-  },
-  "scripts": {
-    "build": "gulp",
-    "build:production": "gulp --production"
   }
 }

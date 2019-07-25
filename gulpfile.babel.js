@@ -77,8 +77,6 @@ import beep from 'beepbeep';
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import babel from 'gulp-babel';
-import sass from 'gulp-sass';
-import replace from 'gulp-replace';
 import uglify from 'gulp-uglify';
 import jsdoc from 'gulp-jsdoc3';
 import esprima from 'gulp-esprima';
@@ -106,12 +104,6 @@ const outPath = {
 if (pluginTiddler !== pluginInfo.title) {
   throw new Error('Gulp settings do not match the plugin.info');
 }
-
-/**** Replacements *************************************************/
-
-const replaceAfterSass = {
-  '__breakpoint__': '{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}'
-};
 
 /**** Tasks ********************************************************/
 
@@ -162,30 +154,6 @@ gulp.task('copy vanilla files', () => {
 
   return gulp.src(pluginSrc + '/**/!(*.scss|*.js)')
              .pipe(gulp.dest(outPath.dist));
-
-});
-
-/**
- * Will compile the scss stylesheets and minify the code if
- * in production mode. After the sass compiler finished, the
- * placeholders are replaced. Eventually, the files are moved
- * to the dist directory.
- */
-gulp.task('compile and move styles', () => {
-
-  const opts = {
-    outputStyle: (argv.production ? 'compressed' : 'nested'),
-    sourceComments: false,
-  };
-
-  let stream = gulp.src(pluginSrc + '/**/*.scss')
-                 .pipe(sass(opts));
-
-  for (let str in replaceAfterSass) {
-    stream = stream.pipe(replace(str, replaceAfterSass[str]));
-  }
-
-  return stream.pipe(gulp.dest(outPath.dist));
 
 });
 

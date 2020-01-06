@@ -1,6 +1,6 @@
 {
   "name": "tw-pouchdb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Danielo Rodriguez Rivero <rdanielo@gmail.com>",
   "description": "The pouchdb library embedded into tiddlywiki",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "gulp",
     "build:production": "gulp --production",
-    "deploy": "cp package.json src/plugins/package.json && cd src/plugins/ && yarn publish",
+    "deploy": "cp package.json README.md src/plugins/ && cd src/plugins/ && yarn publish",
     "postdeploy": "rm src/plugins/package.json"
   },
   "repository": {

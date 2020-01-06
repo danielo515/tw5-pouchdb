@@ -9,7 +9,7 @@
     "build": "gulp",
     "build:production": "gulp --production",
     "deploy": "cp package.json README.md src/plugins/ && cd src/plugins/ && yarn publish",
-    "postdeploy": "rm src/plugins/package.json"
+    "postdeploy": "rm src/plugins/{package.json,README.md}"
   },
   "repository": {
     "type": "git",

@@ -22,7 +22,7 @@ Here is an example file
     "danielo515/tiddlypouch"
   ],
   "themes": [
-    "tiddlywiki/vanilla",
+    "tiddlywiki/vanilla"
   ],
   "languages": [
     "en-US"
